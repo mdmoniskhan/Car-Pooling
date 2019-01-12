@@ -53,14 +53,11 @@ public class SearchRide extends AppCompatActivity {
             //id of Passenger
             int passengerID = getIntent().getExtras().getInt("id");
 
-            //connectiong to DB
-
             Intent intent = new Intent(getApplicationContext(), RIdes.class);
+
             intent.putExtra("startLoc", String.valueOf(startLoc.getText()));
             intent.putExtra("endLoc", String.valueOf(endLoc.getText()));
             intent.putExtra("date", String.valueOf(date.getText()));
-
-            DBconnect db = new DBconnect(this);
 
             Toast.makeText(SearchRide.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
 

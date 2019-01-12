@@ -79,6 +79,9 @@ public class CreateRide extends AppCompatActivity {
             boolean st = db.insertRide(driverID, String.valueOf(pick.getText()),String.valueOf(drop.getText()) ,String.valueOf(carName.getText()),String.valueOf(carNum.getText()),Integer.parseInt(String.valueOf(totalSeat.getText())),Integer.parseInt(String.valueOf(availSeat.getText())),String.valueOf(date.getText()), String.valueOf(time.getText()), String.valueOf(cost.getText()));
 
             if(st){
+
+                db.close();
+
                 Toast.makeText(CreateRide.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
 
                 //sending to welcome screen

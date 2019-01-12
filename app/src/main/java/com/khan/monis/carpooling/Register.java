@@ -72,6 +72,9 @@ public class Register extends AppCompatActivity {
             boolean st = db.insertUser(String.valueOf(name.getText()),String.valueOf(dob.getText()) ,String.valueOf(email.getText()),String.valueOf(password.getText()),String.valueOf(verify.getText()),String.valueOf(phone.getText()),rider);
 
             if(st){
+
+                db.close();
+
                 Toast.makeText(Register.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
 
                 //sending to welcome screen
