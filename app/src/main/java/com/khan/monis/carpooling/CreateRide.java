@@ -1,10 +1,7 @@
 package com.khan.monis.carpooling;
 
-import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.SQLException;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -85,9 +82,8 @@ public class CreateRide extends AppCompatActivity {
                 Toast.makeText(CreateRide.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
 
                 //sending to welcome screen
-                Intent intent = new Intent(getApplicationContext(), WelcomeAct.class);
+                startActivity(new Intent(getApplicationContext(), WelcomeAct.class));
 
-                startActivity(intent);
             }else
                 Toast.makeText(CreateRide.this, "Error", Toast.LENGTH_SHORT).show();
 

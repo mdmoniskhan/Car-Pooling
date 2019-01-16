@@ -5,7 +5,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.content.Intent;
 import android.widget.Switch;
@@ -45,9 +44,7 @@ public class WelcomeAct extends AppCompatActivity {
 
                 Toast.makeText(WelcomeAct.this, "WELCOME : "+c.getString(1), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), CreateRide.class);
-                intent.putExtra("id", c.getInt(0));
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), CreateRide.class).putExtra("id", c.getInt(0)));
 
             }else{
 
@@ -57,9 +54,7 @@ public class WelcomeAct extends AppCompatActivity {
 
                 Toast.makeText(WelcomeAct.this, "WELCOME : "+c.getString(1), Toast.LENGTH_SHORT).show();
 
-                Intent intent = new Intent(getApplicationContext(), SearchRide.class);
-                intent.putExtra("id", c.getInt(0));
-                startActivity(intent);
+                startActivity(new Intent(getApplicationContext(), SearchRide.class).putExtra("id", c.getInt(0)));
 
             }
 
